@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:32:25 by zait-err          #+#    #+#             */
-/*   Updated: 2024/11/18 16:48:34 by zait-err         ###   ########.fr       */
+/*   Updated: 2024/11/18 22:29:58 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int	ft_putchar(char c);
 int	ft_putnbr(int n);
 int	ft_putstr(char *s);
 int	ft_put_unsigned_int(unsigned int n);
+int	ft_put_hexa(unsigned long n, char format);
+int format_check(va_list ap, char c);
 
 #endif

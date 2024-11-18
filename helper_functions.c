@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:30:56 by zait-err          #+#    #+#             */
-/*   Updated: 2024/11/18 16:51:02 by zait-err         ###   ########.fr       */
+/*   Updated: 2024/11/18 21:11:27 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_putnbr(int n)
 	}
 	if (n >= 10)
 	{
-		ft_putnbr(n / 10);
+		i += ft_putnbr(n / 10);
 		i += ft_putchar((n % 10) + 48);
 	}
 	else
@@ -67,10 +67,32 @@ int	ft_put_unsigned_int(unsigned int n)
 	i = 0;
 	if (n >= 10)
 	{
-		ft_putnbr(n / 10);
+		i += ft_put_unsigned_int(n / 10);
 		i += ft_putchar((n % 10) + 48);
 	}
 	else
 		i += ft_putchar(n + 48);
+	return (i);
+}
+
+int	ft_put_hexa(unsigned long n, char format)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	if (format == 'X')
+		str = "0123456789ABCDEF";
+	else if (format == 'x')
+		str = "0123456789abcdef";
+	if (n >= 16)
+	{
+		i += ft_put_hexa(n / 16, format);
+		i += ft_putchar(str[n % 16]);
+	}
+	else
+	{
+		i += ft_putchar(str[n]);
+	}
 	return (i);
 }
