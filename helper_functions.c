@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:30:56 by zait-err          #+#    #+#             */
-/*   Updated: 2024/11/18 21:11:27 by zait-err         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:46:17 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	ft_putnbr(int n)
 	int	i;
 
 	i = 0;
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		i += 11;
-	}
 	if (n < 0)
 	{
 		i += ft_putchar('-');
+		if (n == -2147483648)
+		{
+			i += ft_putchar('2');
+			n = -147483648;
+		}
 		n = -n;
 	}
 	if (n >= 10)
@@ -75,7 +75,7 @@ int	ft_put_unsigned_int(unsigned int n)
 	return (i);
 }
 
-int	ft_put_hexa(unsigned long n, char format)
+int	ft_put_hexa(unsigned int n, char format)
 {
 	int		i;
 	char	*str;
