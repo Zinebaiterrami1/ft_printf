@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:30:56 by zait-err          #+#    #+#             */
-/*   Updated: 2024/11/20 13:46:17 by zait-err         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:18:16 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_put_unsigned_int(unsigned int n)
 	return (i);
 }
 
-int	ft_put_hexa(unsigned int n, char format)
+int	ft_put_hexa(unsigned long int n, char format)
 {
 	int		i;
 	char	*str;
@@ -83,7 +83,7 @@ int	ft_put_hexa(unsigned int n, char format)
 	i = 0;
 	if (format == 'X')
 		str = "0123456789ABCDEF";
-	else if (format == 'x')
+	else if (format == 'x' || format == 'p')
 		str = "0123456789abcdef";
 	if (n >= 16)
 	{

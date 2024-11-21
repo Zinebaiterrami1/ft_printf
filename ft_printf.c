@@ -6,26 +6,11 @@
 /*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:30:59 by zait-err          #+#    #+#             */
-/*   Updated: 2024/11/20 14:10:05 by zait-err         ###   ########.fr       */
+/*   Updated: 2024/11/21 10:14:28 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_ptr(unsigned long ptr)
-{
-	int	count;
-
-	count = 0;
-	if (!ptr)
-		count += ft_putstr("(nil)");
-	else
-	{
-		count += ft_putstr("0x");
-		count += ft_put_hexa(ptr, 'x');
-	}
-	return (count);
-}
 
 int	format_check(va_list ap, char c)
 {
@@ -81,9 +66,4 @@ int	ft_printf(const char *s, ...)
 	}
 	va_end(ap);
 	return (count);
-}
-
-int	main(void)
-{
-	test_ft_printf();
 }
