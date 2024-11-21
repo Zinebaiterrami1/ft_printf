@@ -3,7 +3,7 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c helper_functions.c\
+SRC = ft_printf.c helper_functions.c main.c\
 
 OBJ = ${SRC:.c=.o}
 
